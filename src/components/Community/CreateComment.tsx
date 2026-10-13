@@ -3,8 +3,11 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { isAxiosError } from "axios";
 import { useRef, useState } from "react";
 import EmojiPicker from "emoji-picker-react";
+import { useAuth } from "../../Context/TokenContext";
+import { Link } from "react-router-dom";
 
 const CreateComment = ({ id }: { id: string }) => {
+  const {dataUser} = useAuth()
   const [image, setImage] = useState<string | null>(null);
   const [img, setImg] = useState<File | null>(null);
   const [content, setContent] = useState("");
@@ -118,18 +121,22 @@ const CreateComment = ({ id }: { id: string }) => {
   return (
     <div className="m-3">
       <div className="flex items-start gap-2">
+        <Link to={`/profile/${dataUser?._id}`}>
+        
+        
         <img
-          alt="Mohamed Khater"
+          alt={dataUser?.name}
           className="h-9 w-9 rounded-full object-cover"
-          src="https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linkedPosts/default-profile.png"
+          src={dataUser?.photo}
         />
+        </Link>
 
         <div className="w-full rounded-2xl border border-slate-200 bg-[#f0f2f5] px-2.5 py-1.5 focus-within:border-[#c7dafc] focus-within:bg-white">
           <textarea
             ref={commentContent}
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="Comment as Mohamed Khater..."
+            placeholder={`Comment as ${dataUser?.name}...`}
             rows={1}
             className="max-h-[140px] min-h-[40px] w-full resize-none bg-transparent px-2 py-1.5 text-sm leading-5 outline-none placeholder:text-slate-500"
           />

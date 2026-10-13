@@ -9,6 +9,11 @@ import Register from "../pages/Auth/Register/Register";
 import ProtectedRoutes from "../components/ProtectedRoutes/ProtectedRoutes";
 import Community from "../components/Community/Community";
 import PostDetails from "../pages/PostDetails/PostDetails";
+import Notifications from "../pages/Notifications/Notifications";
+import AllSuggestionsFriend from "../pages/AllSuggestionsFriend/AllSuggestionsFriend";
+import Settings from "../pages/Settings/Settings";
+import MyPosts from './../pages/MyPosts/MyPosts';
+import Saved from "../pages/Saved/Saved";
 
 const mainRouter = createBrowserRouter([
   {
@@ -24,7 +29,11 @@ const mainRouter = createBrowserRouter([
         element: <Feed />,
       },
       {
-        path: "profile",
+        path: "my-posts",
+        element: <MyPosts/>,
+      },
+      {
+        path: "profile/:id",
         element: <Profile />,
       },
       {
@@ -34,6 +43,22 @@ const mainRouter = createBrowserRouter([
       {
         path: "community",
         element: <Community />,
+      },
+      {
+        path: "saved",
+        element: <Saved />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+      },
+      {
+        path: "suggestions",
+        element: <AllSuggestionsFriend />,
+      },
+      {
+        path: "notifications",
+        element: <Notifications />,
       },
       {
         path: "*",

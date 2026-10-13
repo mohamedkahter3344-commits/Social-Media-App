@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios'
 import Posts from './Posts';
 import type {  SinglePost } from '../../interfaces/posts';
+import CreatePost from '../../pages/CreatePost/CreatePost';
 
 const AllPosts = () => {
 
@@ -10,7 +11,6 @@ const AllPosts = () => {
         queryFn: getAllPosts,
     })
 
-    console.log(data);
     
 
     function getAllPosts() {
@@ -23,6 +23,7 @@ const AllPosts = () => {
   return (
     <>
     <div className="w-full px-3 py-2 md:w-[50%] md:px-0">
+      <CreatePost/>
 
      {isLoading ? (
           <div className="space-y-5">

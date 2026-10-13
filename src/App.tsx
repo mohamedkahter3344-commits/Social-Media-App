@@ -8,12 +8,12 @@ const App = () => {
   const queryClient = new QueryClient();
   return (
     <>
-      <TokenContextProvider>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <TokenContextProvider>
           <Toast.Provider placement="top" />
           <RouterProvider router={mainRouter} />
-        </QueryClientProvider>
-      </TokenContextProvider>
+        </TokenContextProvider>
+      </QueryClientProvider>
     </>
   );
 };
