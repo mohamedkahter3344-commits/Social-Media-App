@@ -63,7 +63,7 @@ const Navbar = () => {
                 />
 
                 <h3 className="hidden text-xl font-extrabold tracking-tight text-slate-900 lg:block">
-                  Route Posts
+                  Social App
                 </h3>
               </Link>
             </div>
