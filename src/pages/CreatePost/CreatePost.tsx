@@ -212,7 +212,7 @@ const CreatePost = () => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={4}
-          placeholder="What's on your mind, Mohamed?"
+          placeholder={`What's on your mind, ${dataUser?.name}?`}
           className="w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-[17px] leading-relaxed text-slate-800 outline-none transition focus:border-[#1877f2] focus:bg-white"
         />
       </div>
