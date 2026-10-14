@@ -1,5 +1,10 @@
-
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  Navigate,
+  NavLink,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import RouteLogo from "../../../assets/images/route.png";
 
 import { MdOutlineHome } from "react-icons/md";
@@ -43,6 +48,10 @@ const Navbar = () => {
         },
       },
     );
+  }
+
+  if (location.pathname === "/profile") {
+    return <Navigate to={`/profile/${dataUser?._id}`} replace />;
   }
 
   return (

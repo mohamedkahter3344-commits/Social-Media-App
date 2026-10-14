@@ -14,6 +14,7 @@ import AllSuggestionsFriend from "../pages/AllSuggestionsFriend/AllSuggestionsFr
 import Settings from "../pages/Settings/Settings";
 import MyPosts from './../pages/MyPosts/MyPosts';
 import Saved from "../pages/Saved/Saved";
+import ProductedAuthRoutes from "../components/ProtectedRoutes/ProductedAuthRoutes";
 
 const mainRouter = createBrowserRouter([
   {
@@ -68,7 +69,7 @@ const mainRouter = createBrowserRouter([
   },
   {
     path: "auth",
-    element: <AuthLayout />,
+    element: <ProductedAuthRoutes><AuthLayout /></ProductedAuthRoutes>,
     children: [
       {
         index: true,
